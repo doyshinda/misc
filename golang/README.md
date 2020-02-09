@@ -1,5 +1,5 @@
-# golang
-Folder for miscellaneous Go scrips
+# Golang
+Folder for miscellaneous Go scripts
 
 ## Sudoku
 Sudoku solver, reads in an initial Sudoku puzzle defined in `board.txt` as 9 rows, with 9 numbers representing the puzzle start values
