@@ -4,6 +4,7 @@ import (
     "fmt"
     "io/ioutil"  
     "strings"
+    "sync"
 )
 
 const NUMCHARS = 9
@@ -59,7 +60,11 @@ func getSquareVals(ridx int, cidx int, board *Board) Slice {
     return squareVals
 }
 
+var Mux sync.Mutex
+
 func printBoard(board *Board) {
+    Mux.Lock()
+    defer Mux.Unlock()
     for _, val := range *board {
         for _, col := range val {
             fmt.Print(col)
